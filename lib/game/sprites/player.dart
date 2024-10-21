@@ -215,11 +215,12 @@ class Player extends SpriteAnimationComponent
   @override
   void update(double dt) {
     super.update(dt);
-    game.world.add(_bulletSpawner);
-    if (game.state == GameState.playing) {}
-    if (game.state == GameState.start) {
-      _bulletSpawner.removeFromParent();
+    if (game.state == GameState.playing) {
+      game.world.add(_bulletSpawner);
     }
+    // if (game.state == GameState.start) {
+    //   _bulletSpawner.removeFromParent();
+    // }
 
     if (health <= 0) {
       game.state = GameState.over;
