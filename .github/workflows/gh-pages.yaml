@@ -15,4 +15,3 @@ jobs:
         with:
           baseHref: /space_blast/
           webRenderer: canvaskit
-          token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
