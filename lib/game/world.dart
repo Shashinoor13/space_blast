@@ -52,6 +52,7 @@ class RunningGameWorld extends World
       "bullet.mp3",
       "whoosh.mp3",
       "TheJourney.mp3",
+      "blast.mp3",
     ]);
 
     FlameAudio.bgm.initialize();

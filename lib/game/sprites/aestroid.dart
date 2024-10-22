@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:runner/game/game.dart';
 import 'package:runner/game/sprites/bulltet.dart';
@@ -106,6 +107,15 @@ class Aestroid extends PositionComponent
     if (other is Player) {
       if (game.state == GameState.playing) removeFromParent();
     }
+  }
+
+  @override
+  void onCollisionEnd(other) {
+    super.onCollisionEnd(other);
+
+    if (game.camera.canSee(this)) return;
+
+    FlameAudio.play("blast.mp3");
   }
 
   @override
